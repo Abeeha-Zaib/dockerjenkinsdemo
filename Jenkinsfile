@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sudo usermod -a -G docker $USER
+                sudo groupadd docker
+              sudo usermod -aG docker $USER
+
+               
                 sh 'node --version'
             }
         }
