@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sudo usermode -a -G docker jenkins
-                
+            
+                sudo usermod -aG docker $USER
                 sh 'node --version'
                 sh 'svn --version'
             }
