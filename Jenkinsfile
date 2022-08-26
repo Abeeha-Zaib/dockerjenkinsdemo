@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
             
-               @sudo usermod -aG docker $USER
+               sudo @ usermod -aG docker $USER
                 sh 'node --version'
                 sh 'svn --version'
             }
